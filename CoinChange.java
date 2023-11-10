@@ -35,6 +35,8 @@ Thus, moving on to the next approach as the greedy doesn't work in all the cases
 2. Exhaustive Approach: 
 
 // This gives the solution but throws a TLE.
+//The time complexity is exponential here. 
+//As there are 2 choices whether to choose the particular coin/not choose the particular coin. So it is 2^.
 class Solution {
     //Tc: O(2^(m+n)) where m = no.of coins and n = amount
     public int coinChange(int[] coins, int amount) {
