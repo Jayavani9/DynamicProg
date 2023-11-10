@@ -36,6 +36,7 @@ Thus, moving on to the next approach as the greedy doesn't work in all the cases
 
 // This gives the solution but throws a TLE.
 class Solution {
+    //Tc: O(2^(m+n)) where m = no.of coins and n = amount
     public int coinChange(int[] coins, int amount) {
         return helper(coins, 0, amount, 0); //Calling the helper function to return the minCoins
         
