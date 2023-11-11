@@ -75,6 +75,7 @@ class Solution {
         {
             dp[0][j] = 99999;
         }
+        //Arrays.fill(dp[0], 1, dp[0].length, 99999);
 
         for(int i = 1; i < dp.length; i++)
         {
