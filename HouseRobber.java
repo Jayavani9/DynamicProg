@@ -23,3 +23,19 @@ Output: 12
 Explanation: Rob house 1 (money = 2), rob house 3 (money = 9) and rob house 5 (money = 1).
 Total amount you can rob = 2 + 9 + 1 = 12.
 
+
+
+class Solution:
+    def rob(self, nums: List[int]) -> int:
+        return self.rr(nums, len(nums) - 1)
+
+    def rr(self, nums, index):
+        if index < 0:
+            return 0
+
+        rob_current = nums[index] + self.rr(nums, index - 2)
+        skip_current = self.rr(nums, index - 1)
+
+        return max(rob_current, skip_current)
+        
+
