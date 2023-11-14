@@ -25,6 +25,33 @@ Total amount you can rob = 2 + 9 + 1 = 12.
 
 Solutions
 
+  1. Exhaustive Approach: 
+
+/*
+class Solution {
+  //Tc: O(2^n)
+    public int rob(int[] nums) {
+        if(nums == null || nums.length == 0) return 0;
+
+        return helper(nums, 0, 0);
+      
+    }
+
+    private int helper(int[] nums, int index, int amount)
+    {
+        //base case
+        if(index >= nums.length) return amount;
+        //logic
+        //If we want to select the num
+        int case1 = helper(nums, index+2, amount+nums[index]);
+        // Don't want to select the num
+        int case2 = helper(nums, index+1, amount);
+
+        return Math.max(case1, case2);
+    }
+}
+*/
+
 
 
         
