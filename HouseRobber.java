@@ -72,6 +72,27 @@ class Solution {
 }
 
 
+3. Optimized solution using variables
+
+  class Solution {
+    public int rob(int[] nums) {
+        /Tc: O(n) and Sc: O(1)
+        if(nums == null || nums.length == 0) return 0;
+        int n = nums.length;
+        int dp[] = new int[n];
+        if(n<2) return nums[0];
+        int prev = nums[0];
+        int curr = Math.max(nums[0], nums[1]);
+        for(int i = 2; i < nums.length; i++)
+        {
+            int temp = curr;
+            curr = Math.max(prev+nums[i], curr);
+            prev = temp;
+        }
+        return curr;
+    }
+}
+
 
         
 
